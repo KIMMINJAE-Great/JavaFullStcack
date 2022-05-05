@@ -1,0 +1,126 @@
+<!DOCTYPE html><!-- /**/ -->
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<style>
+		
+		*{margin:0; padding:0;}
+		html{width:100%; height:100%;}
+		form{
+				
+				margin:0 auto; 
+				position: relative; 
+				width:350px; 
+				top:-50px;
+				}
+		
+		
+		#fullframe{
+					display:table;
+					
+					width:100%;
+					height:100%;
+					
+					
+		
+		}
+		
+		#contents{
+				display:table-cell;
+			
+				--width:100%;
+				--height:100%;
+				vertical-align:middle;
+				
+		
+		}
+		
+		
+		
+		body{
+			width:100%; 
+			height:100%;
+			 text-align:center;
+			background:skyblue;
+		}
+		
+		
+		table{
+			margin: auto;
+			--margin-left: 30000;
+			border: 1px solid;
+			
+			text-align:center;
+		
+		}
+		
+		button{
+				font-size:18px;
+				width:100px;
+		}
+		input{
+			width:250px;
+		}
+		
+</style>
+<script>
+		window.onload = function(){
+			document.getElementById("btnlogin").onclick=function(event){
+			event.preventDefault();
+				id = document.getElementById("id").value;
+				pw = document.getElementById("pw").value;
+				if(id == undefined || id == ""){
+					alert("아이디 입력란 확인바랍니다.");
+					document.getElementById("id").focus();
+					return;
+				}
+				if(pw == undefined || pw == ""){
+				alert("비밀번호 기입란을 확인바랍니다.")
+				document.getElementById("pw").focus();
+				return;
+				}
+			document.frm.submit()
+			}
+			var btnjoin = document.getElementById("btnjoin");
+				btnjoin.onclick = function(){
+				
+					location.href = "http://www.google.com";
+			
+			}
+			
+		
+		}
+</script>
+<body>
+<div  id="fullframe">
+	<div id ="contents">
+		<form method="get" action="http://www.naver.com" name="frm">
+				<table>
+					<h1 align="center"> 로그인 </h1>
+					<tr>
+						<td>I D : <input type="text" name="id" id="id"></td>
+					</tr>
+					
+					<tr>
+						<td>PW : <input type="password" name="pw" id="pw"></td>
+					</tr>
+					<tr>
+						<td>	
+								<button type="submit" id="btnlogin">로그인</button>
+								<button type="reset" id="btnreset">취소</button>
+								<button type="button" id="btnjoin">회원가입</button>
+						</td>
+					</tr>
+			
+				</table>
+	
+</form>
+</div>	
+</div>	
+		
+	
+	
+</body>
+</html>
+			
