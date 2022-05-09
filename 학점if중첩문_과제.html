@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score=prompt('성적확인', '점수를 입력하는 곳');
+        //document.write(score);
+        var grade ="";
+        
+        if(score>=90){
+            grade="A";
+            
+            if(score>=97){
+                grade +="+";
+            }   else if(score<=93){
+                grade +="-"
+            }   else {
+            }
+        } else if (score>=80 && score<90){
+            grade = "B";
+            if (score >= 87) {
+                grade += "+";
+            } else if (score < 83) {
+                grade += "-";
+            } else {
+                
+            }
+        } else if (score>=70 && score<80){
+            grade = "C";
+            if (score >= 77) {
+                grade += "+";
+            } else if (score < 73) {
+                grade += "-";
+            } else {
+                
+            }
+        } else if (score>=60 && score<70){
+            grade = "D";
+            if (score >= 67) {
+                grade += "+";
+            } else if (score < 63) {
+                grade += "-";
+            } else {
+                
+            }
+        } else {
+            grade="F";
+        }
+
+        console.log(`학점은 ${grade}입니다.`);
+    
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
+        
+        
