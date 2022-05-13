@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+       
+        tr{
+            margin:0;
+        }
+        
+    </style>
+    <script>
+        window.onload=function(){
+            var joinSubmit = document.getElementById("joinSubmit").onclick=function(){
+            
+                var joinId = document.getElementById("joinId");
+           
+                if(joinId.value=="" || joinId.value == undefined){
+                    alert("ID를 확인해주세요")
+                    joinId.focus();
+                    return;
+                }
+            
+            var joinPw = document.getElementById("joinPw");
+            
+                if(joinPw.value=="" || joinPw.value == undefined){
+                    alert("PW를 확인해주세요")
+                    joinPw.focus();
+                    return;
+                }
+            
+            var joinRePw = document.getElementById("joinRePw");
+            
+                if(joinRePw.value=="" || joinRePw.value == undefined){
+                    alert("PW를 재확인해주세요")
+                    joinRePw.focus();
+                    return;
+                }
+            
+            var joinName = document.getElementById("joinName");
+            
+                if(joinName.value=="" || joinName.value == undefined){
+                    alert("회원명을 확인해주세요")
+                    joinName.focus();
+                    return;
+                }
+            
+            var joinNumber = document.getElementById("joinNumber");
+            
+                if(joinNumber.value=="" || joinNumber.value == undefined){
+                    alert("전화번호를 확인해주세요")
+                    joinNumber.focus();
+                    return;
+                }
+            
+            var joinEmail = document.getElementById("joinId");
+            
+                if(joinEmail.value=="" || joinEmail.value == undefined){
+                    alert("E-mail을 확인해주세요")
+                    joinEmail.focus();
+                    return;
+                }
+        }
+        }
+    
+    </script>
+</head>
+<body>
+    <form method="get" name="join" action="">
+    <table>
+        <thead>
+            <h1 style="text-align:center">회원가입</h1>
+        </thead>
+        <tbody>
+            <tr>
+                <td>회원 ID :<input type="text" id="joinId"></td>
+            </tr>
+            <tr>
+                <td>비밀번호:<input type="text" id="joinPw"></td>
+            </tr>
+            <tr>
+                <td>비밀번호재확인:<input type="text" id="joinRePw"></td>
+            </tr>
+            <tr>
+                <td>회원 명:<input type="text" id="joinName"></td>
+            </tr>
+            <tr>
+                <td>전화번호:<input type="text" id="joinNumber"></td>
+            </tr>
+            <tr>
+                <td>이메일:<input type="text" id="joinEmail">@<input type="text" id="joinEmail"></td>
+            </tr>
+            
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td><input type="submit" value="가입하기 "id="joinSubmit" name="joinSubmit"/></td>
+            </tr>
+
+        </tfoot>
+    
+
+
+    </table>
+
+
+    
+</body>
+</html>

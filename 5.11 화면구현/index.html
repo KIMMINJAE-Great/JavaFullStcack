@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        table {
+
+
+            border: 1px solid black;
+            margin: -100px;
+            background: skyblue;
+
+        }
+
+        td button {
+            width: 80px;
+        }
+
+        input {
+            width: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var btnlogin = document.getElementById("btnlogin").onclick = function (event) {
+                event.preventDefault();
+
+                var id = document.getElementById("id");
+                if (id.value == "" || id.value == undefined) {
+                    alert("ID를 확인해주세요")
+                    id.focus();
+                    return;
+                }
+
+                var pw = document.getElementById("pw");
+                if (pw.value == "" || pw.value == undefined) {
+                    alert("PW를 확인해주세요")
+                    pw.focus();
+                    return;
+                }
+                document.frm.submit();
+            }
+            var btnjoin = document.getElementById("btnjoin").onclick = function () {
+
+                location.href = "join.html";
+}
+        }
+        
+    </script>
+</head>
+
+<body>
+    <form method="get" name="frm" action="mainPage.html">
+        <table>
+            <thead>
+                <th>로그인</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>I D :<input type="text" name="id " id="id" /></td>
+                </tr>
+                <tr>
+                    <td>PW :<input type="password" name="pw" id="pw" /></td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>
+                        <button type="submit" name="btnlogin" id="btnlogin">로그인</button>
+                        <button type="reset">취소</button>
+                        <button type="button" name="btnjoin" id="btnjoin">회원가입</button>
+
+                    </td>
+                </tr>
+            </tfoot>
+
+
+
+        </table>
+    </form>
+
+</body>
+
+</html>
