@@ -1,119 +1,189 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>join</title>
 
     <style>
-        *{
-            margin:0;
-            padding:0;
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        }
-       
-        tr{
-            margin:0;
-        }
-        
+      /* th {
+        width: 130px;
+        margin: 100px;
+        padding: 0;
+      } */
+
+      table {
+        border: 1px solid black;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 580px;
+        height: 230px;
+        margin-left: -290px;
+        margin-top: -115px;
+      }
+      #joinSubmit {
+        width: 100px;
+        background: skyblue;
+        float: right;
+      }
     </style>
+   
     <script>
-        window.onload=function(){
-            var joinSubmit = document.getElementById("joinSubmit").onclick=function(){
-            
-                var joinId = document.getElementById("joinId");
-           
-                if(joinId.value=="" || joinId.value == undefined){
-                    alert("ID를 확인해주세요")
-                    joinId.focus();
-                    return;
-                }
-            
+      window.onload = function () {
+        var joinSubmit = (document.getElementById("joinSubmit").onclick =function (e) {
+            e.preventDefault();
+            var joinId = document.getElementById("joinId");
+
+            if (joinId.value == "" || joinId.value == undefined) {
+              alert("ID를 확인해주세요");
+              joinId.focus();
+              return;
+            }
+
             var joinPw = document.getElementById("joinPw");
-            
-                if(joinPw.value=="" || joinPw.value == undefined){
-                    alert("PW를 확인해주세요")
-                    joinPw.focus();
-                    return;
-                }
-            
+
+            if (joinPw.value == "" || joinPw.value == undefined) {
+              alert("PW를 확인해주세요");
+              joinPw.focus();
+              return;
+            }
+
             var joinRePw = document.getElementById("joinRePw");
-            
-                if(joinRePw.value=="" || joinRePw.value == undefined){
-                    alert("PW를 재확인해주세요")
-                    joinRePw.focus();
-                    return;
-                }
-            
+
+            if (joinRePw.value == "" || joinRePw.value == undefined) {
+              alert("PW를 재확인해주세요");
+              joinRePw.focus();
+              return;
+            }
+
             var joinName = document.getElementById("joinName");
-            
-                if(joinName.value=="" || joinName.value == undefined){
-                    alert("회원명을 확인해주세요")
-                    joinName.focus();
-                    return;
-                }
-            
-            var joinNumber = document.getElementById("joinNumber");
-            
-                if(joinNumber.value=="" || joinNumber.value == undefined){
-                    alert("전화번호를 확인해주세요")
-                    joinNumber.focus();
-                    return;
-                }
-            
-            var joinEmail = document.getElementById("joinId");
-            
-                if(joinEmail.value=="" || joinEmail.value == undefined){
-                    alert("E-mail을 확인해주세요")
-                    joinEmail.focus();
-                    return;
-                }
-        }
-        }
-    
+
+            if (joinName.value == "" || joinName.value == undefined) {
+              alert("회원명을 확인해주세요");
+              joinName.focus();
+              return;
+            }
+
+            var joinNumber1 = document.getElementById("joinNumber1");
+
+            if (joinNumber1.value == "") {
+              alert("전화번호d를 확인해주세요");
+              joinNumber1.focus();
+              return;
+            }
+            var joinNumber2 = document.getElementById("joinNumber2");
+
+            if (joinNumber2.value == "") {
+              alert("전화번s호를 확인해주세요");
+              joinNumber2.focus();
+              return;
+            }
+
+            var joinEmail1 = document.getElementById("joinEmail1");
+
+            if (joinEmail1.value == "" ) {
+              alert("E-mail을 확인해주세요");
+              joinEmail1.focus();
+              return;
+            }
+            var joinEmail2 = document.getElementById("joinEmail2");
+
+            if (joinEmail2.value == "" ) {
+            alert("E-mail을 확인해주세요");
+            joinEmail2.focus();
+            return;
+            }
+            document.getElementById("join").submit();
+          });
+          
+          var inputs = document.querySelectorAll(".joinNumber");
+          input1 = inputs[0];
+          input2 = inputs[1];
+          input1.onkeydown = function () {
+            if (input1.value.length >= 6) {
+              input2.focus();
+            }
+          };
+          input2.onkeydown = (e) => {
+            e = e || window.event; 
+            if (e.keyCode == 8 && input2.value.length === 0) {
+              input1.focus();
+            }
+          };
+
+          
+      
+        };
     </script>
-</head>
-<body>
-    <form method="get" name="join" action="">
-    <table>
+    
+  </head>
+  <body>
+    <form method="get" id="join" action="JoinComplete.html">
+      <table>
         <thead>
-            <h1 style="text-align:center">회원가입</h1>
+          <tr>
+            <th colspan="2" id="joinAccount" style="font-size:20px">회원가입</th>
+          </tr>
         </thead>
+
         <tbody>
-            <tr>
-                <td>회원 ID :<input type="text" id="joinId"></td>
-            </tr>
-            <tr>
-                <td>비밀번호:<input type="text" id="joinPw"></td>
-            </tr>
-            <tr>
-                <td>비밀번호재확인:<input type="text" id="joinRePw"></td>
-            </tr>
-            <tr>
-                <td>회원 명:<input type="text" id="joinName"></td>
-            </tr>
-            <tr>
-                <td>전화번호:<input type="text" id="joinNumber"></td>
-            </tr>
-            <tr>
-                <td>이메일:<input type="text" id="joinEmail">@<input type="text" id="joinEmail"></td>
-            </tr>
-            
+          <tr>
+            <th>회원 ID :</th>
+            <td><input type="text" id="joinId" /></td>
+          </tr>
+          <tr>
+            <th>비밀번호 :</th>
+            <td><input type="text" id="joinPw" /></td>
+          </tr>
+          <tr>
+            <th>재 확인 :</th>
+            <td><input type="text" id="joinRePw" /></td>
+          </tr>
+          <tr>
+            <th>회원 명 :</th>
+            <td><input type="text" id="joinName" /></td>
+          </tr>
+          <tr>
+            <th>전화번호 :</th>
+
+            <td>
+              <select name="mobile" id="mo">
+                <option value="010">010</option>
+                <option value="011">011</option>
+                <option value="017">017</option>
+              </select>
+              - <input type="text" id="joinNumber1"/> -
+              <input type="text" id="joinNumber2" />
+            </td>
+          </tr>
+          <tr>
+            <th>E-mail :</th>
+            <td>
+              <input type="text" id="joinEmail1" maxlength="6" /> @
+              <input type="text" id="joinEmail2" maxlength="6" />
+            </td>
+          </tr>
         </tbody>
-        
+
         <tfoot>
-            <tr>
-                <td><input type="submit" value="가입하기 "id="joinSubmit" name="joinSubmit"/></td>
-            </tr>
-
+          <tr clospan="2">
+            <td></td>
+            <td>
+              <input type="submit" value="가입하기" id="joinSubmit" name="joinSubmit">
+            </td>
+          </tr>
         </tfoot>
-    
-
-
-    </table>
-
-
-    
-</body>
+      </table>
+    </form>
+   
+  </body>
 </html>
+               
+              

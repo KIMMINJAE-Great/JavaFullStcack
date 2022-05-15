@@ -15,39 +15,75 @@
         height:100%;
         
     }
+    div{
+        margin:1px;
+    }
     #container{
         
-        margin:0 20%;
-        height:100%;
+        margin:0 10%;
+        height:800px;
+        width:1200px;
     }
     #contents{
-            background:grey;
-            height:100%;
+            
+            height:800px;
     }
     #header{
         height:100px;
-        background:purple;
+        width:1196px;
+        background:#DDDDFF;
         text-align: center;
+      
         
     }
+    #headH1{
+        position:absolute;
+        top:4%;
+        left:45%;
+    }
+    
+    
     #nav{
         float:left;
-        background:blue;
-        height:60%;
-        width:30%;
+        background:rgb(199, 233, 255, 1.0);
+        height:50px;
+        width:1196px;
+       
     }
     #aside{
         float:right;
-        background:red;
-        height:60%;
-        width:70%;
+        background:#FFBDBD;
+        height:700px;
+        width:961px;
+    }
+    #section{
+        background:#848CB5;
+        float:left;
+        width:233px;
+        height:700px; 
     }
     
     #footer{
         float:left;
-        background:yellow;
-        height:20%;
-        width:100%;
+        background:#DDDDFF;
+        height:50px;
+        width:1196px;
+    }
+    ul{
+        text-align:center;
+    }
+    li{
+        float:left;
+        list-style:none;
+        margin-top:15px;
+        margin-left:0;
+        margin-right:50px;
+        
+    }
+    #weather{
+        float:right;
+        margin-top:15px;
+        margin-right:10px;
     }
    
             
@@ -57,8 +93,22 @@
 <body>
     <div id="container"> 
         <div id="contents">
-            <div id="header"><h1>Naver</h1></div>
-            <div id="nav">nav</div>
+            <div id="header"><div id="headH1"><h1>Welcome!!</h1></div></div>
+            <div id="nav">
+                <ul class="menu">
+                    <li>메일</li>
+                    <li>카페</li>
+                    <li>블로그</li>
+                    <li>쇼핑</li>
+                    <li>사전</li>
+                    <li>뉴스</li>
+                    <li>증권</li>
+                    <li>부동산</li>
+                    <li>지도</li>
+                </ul>
+                <div id="weather">날씨</div>
+            </div>
+            <div id="section">section</div>
             <div id="aside">aside</div>
             <div id="footer">footer</div>
             
