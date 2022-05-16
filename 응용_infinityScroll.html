@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Scroll</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        div{
+            font-size:37px;
+        }
+    </style>
+    <script>
+        function movePage(seq){
+            var pageHidden = document.querySeletor("#page");
+            location.href=`jq_practice.html.html?seq=${seq}$page={page}=${pageHidden.value}`;
+        }
+        window.onload = function(){
+            var seq = 0;
+            var page = 1;
+            var appendList = function(){
+                    var pageHidden = document.querySelector("#page");
+                    pageHidden.value = page++;
+                    for(i=0; i<20; i++){
+                        $(`<div><a href="#" onclick="movePage()" data-seq="${seq}">
+                            Infinity Scroll ${seq++}</a></div>`).appendTo('body');
+                    }
+            };
+            appendList();
+        
+
+            $(window).scroll(function () {
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+                console.log($(window).scrollTop(), $(window).height());
+                if (scrollHeight == documentHeight) {
+                    appendList();
+
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <input type="hidden" id="page" name="page">
+</body>
+</html>
