@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Scroll Button</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <style>
+    div {
+      font-size: 30px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var seq = 0;
+      
+
+      var appendList = function () {
+        
+
+        for (i = 0; i < 20; i++) {
+
+          $(`<h1>Infinity Scroll ${seq++}</h1>`).appendTo("#list");
+        }
+      };
+      appendList();
+    
+
+    // var btnMore = document.getElementById("btnMore");
+    //   btnMore.onclick=function(){
+    //     var scrollHeight = $(window).scrollTop() + $(window).height();
+    //             var documentHeight = $(document).height();
+    //             console.log($(window).scrollTop(), $(window).height());
+    //             if (scrollHeight == documentHeight) {
+    //                 appendList();
+
+    //             }
+    //         };
+    
+      document.getElementById("btnMore").onclick=function(){
+        appendList();
+      }
+  
+  };
+    </script>
+</head>
+<body>
+  <input type="hidden" id="page" name="page">
+  <div id="list">
+
+  </div>
+  <button id="btnMore">더 보기</button>
+</body>
+</html>

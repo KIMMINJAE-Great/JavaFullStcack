@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응용 문서객체추가</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        $(function(){
+            // $(function(){
+                
+                    
+            //   $('<h1>Create Document Object By jQuery</h1>'').css({
+            //   'background':'red', 'color':'white'
+            //    }).appendTo('body');
+                    
+                
+            // });
+            // for (let i = 0; i < 10; i++) {
+                
+            //     $(`<h5>Create Document Object ${i}By jQuery</h5>`).css({
+            //     'background':'red', 'color':'white'
+            //     }).appendTo('div');
+                
+            // }
+            for (let i = 0; i < 10; i++) {
+                
+                $("div").append(`<h5>Create Document Object ${i}By jQuery</h5>`);
+                $("h5").css({
+                'background':'red', 'color':'white'});
+                // appendTo랑 append before의 주체위치를 다르게
+                // css는 append prepend after before에서는 따로 
+                // 해당 태그에 먹게끔 만들어준다. 
+            }
+        });
+
+        // window.onload=()=>{
+        //     // var str ='';
+        //     for (let i = 0; i < 10; i++) {
+        //     //document.body.append( `<h5>Create Document Object ${i}By jQuery</h5>`);
+        //         // str += `<h5>Create Document Object ${i}By jQuery</h5>`;
+        //         document.body.append(document.createElement('h5'));
+        //     }
+        //     // document.body.innerHTML=  str;
+        //     var h5s = document.querySelectorAll('h5');
+        //     h5s.forEach(function(item, i){
+        //         item.textContent = `Create Document Object ${i} By jQuery`;
+        //         item.style.background = 'red';
+        //         item.style.color='white';
+                
+        //     });
+        // }
+                
+    </script>
+</head>
+<body>
+    <h3>TOP</h3>
+    <div style="border: 1px solid black">
+        <h1>Document</h1>
+    </div>
+    <h3>BOTTOM</h3>
+</body>
+</html>
