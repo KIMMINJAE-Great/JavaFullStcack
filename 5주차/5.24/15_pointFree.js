@@ -1,4 +1,4 @@
-const {map, filter, pip, values, go} = require('fxjs')
+const {map, filter, pipe, values, go} = require('fxjs')
 const L = require('fxjs')
 
 const 친구들 = [
